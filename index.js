@@ -7,7 +7,7 @@ function Book(title, author, pages) {
   this.pages = pages;
 }
 
-addToLibrary('A walk to Remember', 'Cats');
+
 
 // Assigning Variables
 const overlay = document.querySelector('.overlay')
@@ -30,43 +30,37 @@ form.addEventListener("submit", (e) => {
   console.log(newBook)
   modal.classList.add('inactive');
   document.querySelector('.overlay').classList.remove('active');
+  myLibrary.push(newBook);
 
   const div = document.createElement('div');
   div.classList.add('card');
 
   const titleSpan = document.createElement('span');
-  titleSpan.textContent = title.value;
-  div.appendChild(titleSpan);
-  div.appendChild(document.createElement('br'))
+  createElementAndAppend(div, titleSpan, title, true)
+  
 
   const authorSpan = document.createElement('span');
-  authorSpan.textContent = author.value;
-  div.appendChild(authorSpan);
-  div.appendChild(document.createElement('br'))
+  createElementAndAppend(div, authorSpan, author, true)
 
   const pagesSpan = document.createElement('span');
-  pagesSpan.textContent = pages.value;
-  div.appendChild(pagesSpan);
-  div.appendChild(document.createElement('br'));
+  createElementAndAppend(div, pagesSpan, pages, true)
 
   const readButton = document.createElement('button');
   checkReadStatus(readButton);
   readButton.addEventListener('click', (e) => {
     toggleRead(readButton);
   })
-  div.appendChild(readButton);
-  div.appendChild(document.createElement('br'));
+  createElementAndAppend(div, readButton, undefined, true)
+  
 
   const removeButton = document.createElement('button');
   removeButton.classList.add('remove');
   removeButton.textContent = 'Remove';
   div.appendChild(removeButton);
-
-
-  
+  addRemoveCardEventListener(removeButton);
 
   document.querySelector('.card-container').appendChild(div);
-  addRemoveCardEventListener(removeButton);
+  
 });
 
 
@@ -92,10 +86,6 @@ removeBtns.forEach(button => {
     button.parentElement.style.transform = 'scale(0)';
   })
 })
-
-// submit.addEventListener('click', (e) => {
-//   e.preventDefault()
-// })
 
 // Functions
 function addToLibrary(...books) {
@@ -131,13 +121,12 @@ function toggleRead(button) {
   }
 }
 
+function createElementAndAppend(appendTo, toBeAppend, eleID, lineSpace) {
+  if (eleID) toBeAppend.textContent = eleID.value;
+  appendTo.appendChild(toBeAppend);
+  if (lineSpace) appendTo.appendChild(document.createElement('br'))
+}
 
-// myLibrary.forEach((book, index) => {
-  
-//   if (index === myLibrary.length -1) document.querySelector('.book-titles').textContent += `${book}.`;
-//   else document.querySelector('.book-titles').textContent += `${book}, `;
-  
-// })
 
 
 
