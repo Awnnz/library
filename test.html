@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Table template</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div>
+        <button id="btn">Add Book</button>
+    </div>
+    <div class="card-container">
+        <div class="modal inactive">
+            <form id="form">
+                <input type="text" placeholder="Title" id="title" />
+                <input type="text" placeholder="Author"id="author" />
+                <input type="text" placeholder="Pages"id="pages" />
+                <div class="readCheck">
+                    <label for="accept">Have you read it yet? </label>
+                    <input type="checkbox" id="accept" name="accept" value="Read"> 
+                </div>
+                <div class='form-buttons'>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button class='submit' type="submit">Submit</button>
+                </div>
+
+              </form>
+        </div>
+        <div class="card">
+            <span>A walk to remember</span><br>
+            <span>Brian Duong</span><br>
+            <span>62 pages</span><br>
+            <button class="remove">Remove</button>
+        </div>
+        <div class="card">
+            <span>Cats</span><br>
+            <span>Shin T-pain</span><br>
+            <span>81 pages</span><br>
+            <button class="remove">Remove</button>
+        </div>
+        <div class="card">
+            <span>Dogs</span><br>
+            <span>Shin T-pain</span><br>
+            <span>81 pages</span><br>
+            <button class="remove">Remove</button>
+        </div>
+        <div class="card">
+            <span>Spiderman</span><br>
+            <span>Shin T-pain</span><br>
+            <span>81 pages</span><br>
+            <button class="remove">Remove</button>
+        </div>
+    </div>
+    <div class="overlay">
+
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

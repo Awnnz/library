@@ -1,0 +1,140 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal > button, #btn {
+  height: 3rem;
+  width: 9rem;
+  margin-bottom: 10px;;
+}
+
+.card-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 250px;
+  grid-auto-rows: 250px;
+  width: 1000px;
+  height: 1000px;
+  row-gap: 20px;
+  border: 1px black solid;
+  justify-items: center;
+  padding-top: 10px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  background: lightblue;
+  font-size: 1.3rem;
+  transition: 0.2s ease-in-out;
+  transform: scale(1);
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  background-color: pink;
+  top: 30%;
+  transform: scale(1);
+  transition: 0.2s ease-in-out;
+  z-index: 1;
+}
+
+.inactive {
+  transform: scale(0);
+}
+
+input {
+  font-size: 1.5rem;
+}
+
+form button {
+  font-size: 1.5rem;
+  padding: 5px 10px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.active {
+  display: block;
+}
+
+body {
+  border: pink 1px solid;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: grey;
+  opacity: .5;
+  height: 100%;
+  width: 100%;
+}
+
+.active {
+  display: block;
+}
+
+.veritcal {
+  border: 1px black solid;
+}
+
+.remove {
+  padding: 5px 10px;
+  font-size: 1rem;
+}
+
+.read , .unread{
+  padding: 5px 10px;
+  font-size: 1rem;
+  background-color: green;
+  border: none;
+  transition: .3s ease-in-out;
+}
+
+.unread {
+  background-color: red;
+}
+
+.readCheck {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.5rem;
+}
+
+.readCheck input {
+  align-self: end;
+  height: 30px;
+  width: 30px;
+}
